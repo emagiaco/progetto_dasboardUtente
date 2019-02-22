@@ -1,0 +1,39 @@
+<div class="example-container">
+  
+  <form class="form-contatto" [formGroup]="mioForm">
+    <mat-form-field>
+      <input matInput placeholder="Nome" formControlName="nome">
+    </mat-form-field>
+    <span class="validatore" *ngIf="nome.invalid && nome.dirty">Il tuo nome dovrebbe avere almeno 4 caratteri</span>
+
+    <mat-form-field>
+      <input matInput placeholder="Cognome" formControlName="cognome">
+    </mat-form-field>
+    <span class="validatore" *ngIf="cognome.invalid && cognome.dirty">Questo campo non può contenere meno di 4 caratteri</span>
+
+
+
+    <mat-form-field>
+      <input matInput placeholder="Città" formControlName="citta">
+    </mat-form-field>
+    <span class="validatore" *ngIf="citta.invalid && citta.dirty">Scrivi correttamente il nome della tua città</span>
+
+
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+    <span class="validatore" *ngIf="email.invalid && email.dirty">Scrivi correttamente il tuo indirizzo email</span>
+
+  
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="myDatepicker" placeholder="Data di Nascita">
+    <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #myDatepicker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary"> ISCRIVITI </button>
+
+  </form>
+
+</div>

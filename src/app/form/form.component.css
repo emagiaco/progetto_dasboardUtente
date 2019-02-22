@@ -1,0 +1,27 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .form-contatto{
+    display: grid;
+    width: 250px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 10px 15px;
+  }
+
+  .tabella{
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+  }
+.validatore{
+  font-size: 13px;
+  margin-bottom: 20px;
+}

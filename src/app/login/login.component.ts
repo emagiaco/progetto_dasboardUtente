@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
     login() : void {
       if(this.username == 'jdoe' && this.password == 'jdoe'){
       this.router.navigate(["user"]);
-        // alert("BENE ACCEDI")
       }else {
         alert("Credenziali non valide");
       }

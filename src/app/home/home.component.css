@@ -1,5 +1,9 @@
+html{
+    min-height: 100%;
+}
+
 .bg{
-    /* min-height: -webkit-fill-available; */
+    min-height: -webkit-fill-available;
     background:linear-gradient(0deg,rgba(0, 0, 0, 0.603),rgba(0, 0, 0, 0.609)),url(./img/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;

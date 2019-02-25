@@ -1,5 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -10,7 +13,7 @@ export class FormComponent implements OnInit {
 
   mioForm: FormGroup;
 
-  constructor() { 
+  constructor(public dialog: MatDialog, private router: Router) { 
     this.mioForm = new FormGroup({
       nome: new FormControl('', [Validators.required, Validators.minLength(4)]),
       cognome: new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -29,7 +32,9 @@ export class FormComponent implements OnInit {
   get date(){return this.mioForm.get('date')}
 
   registrazione() : void {
-    alert(`Bene, il tuo profilo è stato registrato`)
+    this.dialog.open(DialogComponent, {
+    });
+    this.router.navigate(["user"]);
   }
 
 }

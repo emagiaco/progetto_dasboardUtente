@@ -15,8 +15,7 @@ import { FormComponent } from './form/form.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { 
-  MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { 
   ReactiveFormsModule, 
   FormsModule } from '@angular/forms';
@@ -28,6 +27,7 @@ import {
   MatIconModule, 
   MatListModule } from '@angular/material';
 import { DialogComponent } from './dialog/dialog.component';
+import { EventiComponent } from './eventi/eventi.component';
 
 
 @NgModule({
@@ -38,7 +38,8 @@ import { DialogComponent } from './dialog/dialog.component';
     FormComponent,
     UserComponent,
     HomeComponent,
-    DialogComponent
+    DialogComponent,
+    EventiComponent
   ],
   imports: [
     BrowserModule,

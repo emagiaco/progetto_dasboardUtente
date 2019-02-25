@@ -3,19 +3,19 @@
   <form class="form-contatto" [formGroup]="mioForm" (ngSubmit)="registrazione()">
 
     <mat-form-field>
-      <input matInput placeholder="Nome" formControlName="nome">
+      <input matInput placeholder="Nome" formControlName="nome" pattern="[a-zA-Z ]*">
     </mat-form-field>
     <span class="validatore" *ngIf="nome.invalid && nome.dirty">Il tuo nome dovrebbe avere almeno 4 caratteri</span>
 
     <mat-form-field>
-      <input matInput placeholder="Cognome" formControlName="cognome">
+      <input matInput placeholder="Cognome" formControlName="cognome" pattern="[a-zA-Z ]*">
     </mat-form-field>
     <span class="validatore" *ngIf="cognome.invalid && cognome.dirty">Questo campo non può contenere meno di 4 caratteri</span>
 
 
 
     <mat-form-field>
-      <input matInput placeholder="Città" formControlName="citta">
+      <input matInput placeholder="Città" formControlName="citta" pattern="[a-zA-Z ]*">
     </mat-form-field>
     <span class="validatore" *ngIf="citta.invalid && citta.dirty">Scrivi correttamente il nome della tua città</span>
 
@@ -24,6 +24,12 @@
       <input matInput placeholder="Email" formControlName="email">
     </mat-form-field>
     <span class="validatore" *ngIf="email.invalid && email.dirty">Scrivi correttamente il tuo indirizzo email</span>
+
+
+    <mat-form-field>
+      <input matInput placeholder="Telefono" formControlName="telefono" pattern="^[03]{1}\d{9}$">
+    </mat-form-field>
+    <span class="validatore" *ngIf="telefono.invalid && telefono.dirty">Scrivi un numero di telefono valido</span>
 
   
 

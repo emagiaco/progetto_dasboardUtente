@@ -19,7 +19,8 @@ export class FormComponent implements OnInit {
       cognome: new FormControl('', [Validators.required, Validators.minLength(2)]),
       citta: new FormControl('', [Validators.required, Validators.minLength(2)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      myDatepicker: new FormControl('', [Validators.required]) 
+      myDatepicker: new FormControl('', Validators.required),
+      telefono: new FormControl('', Validators.required)
     });
    }
 
@@ -30,6 +31,7 @@ export class FormComponent implements OnInit {
   get citta(){return this.mioForm.get('citta')}
   get email(){return this.mioForm.get('email')}
   get date(){return this.mioForm.get('date')}
+  get telefono(){return this.mioForm.get('telefono')}
 
   registrazione() : void {
     this.dialog.open(DialogComponent, {

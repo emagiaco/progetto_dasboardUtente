@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -17,14 +17,10 @@ export class FormComponent implements OnInit {
       citta: new FormControl('', [Validators.required, Validators.minLength(2)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       myDatepicker: new FormControl('', [Validators.required]) 
-
     });
    }
 
   ngOnInit() {
-  }
-  getInfo() {
-    console.log(this.mioForm.value);
   }
   get nome(){return this.mioForm.get('nome')}
   get cognome(){return this.mioForm.get('cognome')}
@@ -32,5 +28,8 @@ export class FormComponent implements OnInit {
   get email(){return this.mioForm.get('email')}
   get date(){return this.mioForm.get('date')}
 
+  registrazione() : void {
+    alert(`Bene, il tuo profilo è stato registrato`)
+  }
 
 }

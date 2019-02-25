@@ -1,3 +1,14 @@
-<p>
-  login works!
-</p>
+
+    <div class="contenitore">
+    <form class="form-contatto">
+      <mat-form-field>
+        <input matInput placeholder="Username" name="username" required [(ngModel)]="username">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password" name="password" required [(ngModel)]="password">
+      </mat-form-field>
+    </form>
+    
+    <button id="btn-accesso" mat-raised-button (click)="login()" color="primary">ACCEDI</button>
+  </div>

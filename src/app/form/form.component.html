@@ -1,6 +1,7 @@
-<div class="example-container">
+<div class="contenitore">
   
-  <form class="form-contatto" [formGroup]="mioForm">
+  <form class="form-contatto" [formGroup]="mioForm" (ngSubmit)="registrazione()">
+
     <mat-form-field>
       <input matInput placeholder="Nome" formControlName="nome">
     </mat-form-field>
@@ -26,14 +27,14 @@
 
   
 
-  <mat-form-field>
-    <input matInput [matDatepicker]="myDatepicker" placeholder="Data di Nascita">
+  <mat-form-field matTooltip="Usa il calendario a destra per selezionare una data">
+    <input matInput [matDatepicker]="myDatepicker" placeholder="Data di Nascita" disabled>
     <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
-    <mat-datepicker #myDatepicker></mat-datepicker>
+    <mat-datepicker #myDatepicker disabled="false"></mat-datepicker>
   </mat-form-field>
 
-  <button mat-raised-button color="primary"> ISCRIVITI </button>
-
   </form>
+
+  <button id="btn-registrazione" (click)="registrazione()" mat-raised-button color="primary" [disabled]="this.nome.invalid || this.cognome.invalid || this.citta.invalid || this.email.invalid"> ISCRIVITI </button>
 
 </div>

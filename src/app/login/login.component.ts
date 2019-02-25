@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+// import { MatDialog } from '@angular/material'
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+    constructor(private router: Router) { }
+    username: string;
+    password: string;
+  
+    ngOnInit() {
+    }
+    login() : void {
+      if(this.username == 'jdoe' && this.password == 'jdoe'){
+      this.router.navigate(["user"]);
+        // alert("BENE ACCEDI")
+      }else {
+        alert("Credenziali non valide");
+      }
+    }
 }

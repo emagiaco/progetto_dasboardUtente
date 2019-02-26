@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from "jquery";
+import { Router, RouterOutlet } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-user',
@@ -7,28 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
-}
+  recuperoEventi(){
+    var params = {};
+    params['token'] = 'F6E5ODJ6JCOZ7HTDOVHW';
+    params['location.address'] = 'Rome';
 
-var request = new XMLHttpRequest();
-
-request.open('GET', 'https://www.eventbriteapi.com/v3/events/search/?token=3FSAZUKBUQQ4WO7GGMBE');
-
-request.setRequestHeader('Authorization', 'Bearer 3FSAZUKBUQQ4WO7GGMBE');
-request.setRequestHeader('Content-Type', 'application/json');
-
-request.onreadystatechange = function () {
-  if (this.readyState === 4) {
-    console.log('Status:', this.status);
-    console.log('Headers:', this.getAllResponseHeaders());
-    console.log('Body:', this.responseText);
-    
+    $.ajax({
+      url:'https://www.eventbriteapi.com/v3/events/search/',
+      data:params,
+      success: function(data){
+        for (let i = 0; i < data.events.length; i++) {
+          $('#datiana').append('<tr> <td>'+(data.events[i].name.text)+'</td>'+'<td>'+(data.events[i].description.html)+'</td></tr>');
+        }
+      },
+      error: function(xhr){
+        console.log(xhr)
+      }
+    });
   }
-};
 
-request.send();
+  redirect(router: Router){
+    this.router.navigateByUrl('home');
+  }
 
+}

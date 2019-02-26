@@ -1,0 +1,55 @@
+<div id="container">
+    <!-- <button (click)='recuperoEventi()'>Cliccami</button> -->
+    <!-- <mat-card>
+    <table id="datiana">
+        <thead>
+            <tr>
+                <th>Titolo</th>
+                <th>Descrizione</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    </mat-card> -->
+    <!-- <button (click)='redirect()'>Home</button> -->
+
+    <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Eventi della settimana
+                </mat-panel-title>
+                <mat-panel-description>
+                  Sezione dedicata agli eventi della settimana
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <app-eventi></app-eventi>
+             </mat-expansion-panel>
+
+
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+                                
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  News della settimana
+                </mat-panel-title>
+                <mat-panel-description>
+                  Clicca per caricare le news{{panelOpenState ? '' : ''}}
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+
+                <app-news></app-news>
+
+
+
+                </mat-expansion-panel>
+
+
+          </mat-accordion>
+
+</div>

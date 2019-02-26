@@ -28,6 +28,10 @@ import {
   MatListModule } from '@angular/material';
 import { DialogComponent } from './dialog/dialog.component';
 import { EventiComponent } from './eventi/eventi.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTableModule} from '@angular/material/table';
+import { NewsComponent } from './news/news.component';
 
 
 @NgModule({
@@ -39,7 +43,8 @@ import { EventiComponent } from './eventi/eventi.component';
     UserComponent,
     HomeComponent,
     DialogComponent,
-    EventiComponent
+    EventiComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,9 @@ import { EventiComponent } from './eventi/eventi.component';
     FormsModule,
     MatTooltipModule,
     MatDialogModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatTableModule
   ],
   entryComponents: [
     DialogComponent
